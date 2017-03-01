@@ -42,8 +42,16 @@ Here, we have a different Yelp-style application. We need customers, restaurants
   - The data always lives on the belongs_to relationship
   - Do the belongs_to first, then do the has_many
   - If there is a many to many, we need a third table
-  - We've provided you with a `console.rb` file and a `seeds.rb` file. You can run `ruby tools/seeds.rb` to add some data to your database, and then `ruby tools/console.rb` to interact with your Ruby classes. 
+  - We've provided you with a `console.rb` file and a `seeds.rb` file. You can run `ruby tools/seeds.rb` to add some data to your database, and then `ruby tools/console.rb` to interact with your Ruby classes.
 
-```
+
 #### Write your domain model here:
-```
+
+### customers
+|id| first_name| last_name
+### restaurants
+|id | name | owner_id
+### reviews
+|id| content | restaurant_id | customer_id
+### owners
+| id| first_name | last_name
