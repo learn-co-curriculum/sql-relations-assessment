@@ -73,3 +73,16 @@ end
 
 
 #### Write your domain model here:
+customers
+
+restaurants
+has_many reviews
+has_many customers through reviews
+owner_id
+
+owners
+belongs_to restaurant
+
+reviews
+customer_id
+restaurant_id

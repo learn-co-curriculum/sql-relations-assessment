@@ -14,9 +14,19 @@ class Review
   
 
   def customer
+    sql = <<-SQL
+      SELECT customers.* FROM customers WHERE customers.id = ? LIMIT 1
+    SQL
+    row = self.class.db.execute(sql, self.customer_id)
+    Customer.object_from_row(row.first)
   end
 
   def restaurant
+    sql = <<-SQL
+      SELECT restaurants.* FROM restaurants WHERE restaurants.id = ?
+    SQL
+    row = self.class.db.execute(sql, self.restaurant_id)
+    Restaurant.object_from_row(row.first)
   end
 
 end
